@@ -6,7 +6,6 @@ const ProgramSchema = new mongoose.Schema({
 	title: String,
 	pictureURL: String,
 	level: String,
-	duration: Number,
 	description: String,
 });
 

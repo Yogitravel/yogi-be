@@ -5,8 +5,39 @@ const ProgramdetailSchema = new mongoose.Schema({
 
 	title: String,
 	description: String,
-	//tao array
 	videoURLList: [
+		{
+			url: {
+				type: String,
+			},
+			name: {
+				type: String,
+			},
+		},
+		{
+			url: {
+				type: String,
+			},
+			name: {
+				type: String,
+			},
+		},
+		{
+			url: {
+				type: String,
+			},
+			name: {
+				type: String,
+			},
+		},
+		{
+			url: {
+				type: String,
+			},
+			name: {
+				type: String,
+			},
+		},
 		{
 			url: {
 				type: String,

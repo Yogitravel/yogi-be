@@ -7,6 +7,7 @@ const cors = require("cors");
 require("dotenv").config();
 var indexRouter = require("./routes/index");
 var programsRouter = require("./routes/programs");
+var userRouter = require("./routes/userRouter");
 var programdetailRouter = require("./routes/programdetail");
 var app = express();
 
@@ -21,5 +22,6 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
 app.use("/", indexRouter);
 app.use("/programs", programsRouter);
 app.use("/programdetail", programdetailRouter);
+app.use("/users", userRouter);
 
 module.exports = app;

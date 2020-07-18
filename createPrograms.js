@@ -16,7 +16,6 @@ async function createPrograms(n_samples) {
 			title: faker.lorem.sentence(),
 			pictureURL: faker.image.image(),
 			level: faker.random.number(),
-			duration: faker.random.number(),
 			description: faker.lorem.sentence(),
 		});
 		console.log(`Created $(i+1) program`);
