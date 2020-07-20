@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
 
 app.use("/", indexRouter);
 app.use("/programs", programsRouter);
-app.use("/programdetail", programdetailRouter);
+app.use("/programs/:id", programdetailRouter);
 app.use("/users", userRouter);
 
 module.exports = app;

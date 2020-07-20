@@ -28,7 +28,15 @@ router.post("/register", async (req, res) => {
 			displayName,
 		});
 		const savedUser = await newUser.save();
-		res.json(savedUser);
+		const token = await jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET);
+		// console.log(token);
+		res.json({
+			token,
+			user: {
+				id: savedUser._id,
+				displayName: savedUser.displayName,
+			},
+		});
 	} catch (err) {
 		res.status(500).json({ error: err.message });
 	}
@@ -88,10 +96,7 @@ router.post("/tokenIsValid", async (req, res) => {
 
 router.get("/", auth, async (req, res) => {
 	const user = await User.findById(req.user);
-	res.json({
-		displayName: user.displayName,
-		id: user._id,
-	});
+	res.json(user);
 });
 
 const Programdetail = require("../models/Programdetail");
