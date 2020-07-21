@@ -4,6 +4,8 @@ const ProgramdetailSchema = new mongoose.Schema({
 	// attributes
 
 	title: String,
+	level: String,
+	duration: String,
 	description: String,
 	videoURLList: [
 		{
