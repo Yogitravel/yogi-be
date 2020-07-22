@@ -10,6 +10,17 @@ const userSchema = new mongoose.Schema({
 			ref: "Program",
 		},
 	],
+	tasks: [
+		{
+			name: {
+				type: String,
+				required: true,
+			},
+			detail: {
+				type: String,
+			},
+		},
+	],
 });
 
-module.exports = User = mongoose.model("user", userSchema);
+module.exports = User = mongoose.model("User", userSchema);

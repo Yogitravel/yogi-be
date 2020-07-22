@@ -7,25 +7,16 @@ const TodosSchema = new mongoose.Schema({
 		type: mongoose.Schema.ObjectId,
 		ref: "User",
 	},
-	tasks: [
-		{
-			name: { type: String },
-		},
-		{
-			name: { type: String },
-		},
-		{
-			name: { type: String },
-		},
-		{
-			name: { type: String },
-		},
-		{
-			name: { type: String },
-		},
-	],
+	name: {
+		type: String,
+		required: true,
+	},
+	detail: {
+		type: String,
+		required: true,
+	},
 });
 
-const Todos = mongoose.model("Todos", TodosSchema);
+const Todos = mongoose.model("Todo", TodosSchema);
 
 module.exports = Todos;

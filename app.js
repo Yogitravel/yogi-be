@@ -8,6 +8,7 @@ require("dotenv").config();
 var indexRouter = require("./routes/index");
 var programsRouter = require("./routes/programs");
 var userRouter = require("./routes/userRouter");
+var todoRouter = require("./routes/todoRouter");
 var programdetailRouter = require("./routes/programdetail");
 var app = express();
 
@@ -23,5 +24,6 @@ app.use("/", indexRouter);
 app.use("/programs", programsRouter);
 app.use("/programs/:id", programdetailRouter);
 app.use("/users", userRouter);
+app.use("/todos", todoRouter);
 
 module.exports = app;
