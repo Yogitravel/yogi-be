@@ -15,6 +15,9 @@ const TodosSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	markdone: {
+		type: Boolean,
+	},
 });
 
 const Todos = mongoose.model("Todo", TodosSchema);
